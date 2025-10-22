@@ -1,0 +1,255 @@
+/* ======================================= */
+/* Paleta de colores tierra:               */
+/* Arena Clara (Fondo): #FAF0E6           */
+/* Crema/Pergamino (Carta): #FFFAF0       */
+/* Marrón Oscuro (Texto): #4A3A29         */
+/* Terracota (Acento): #C36A5A            */
+/* Verde Oliva Suave (Hojas): #A9A48C     */
+/* ======================================= */
+
+/* Estilos Base del Documento */
+body {
+    background-color: #FAF0E6; 
+    font-family: 'Georgia', serif; 
+    color: #4A3A29; 
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    text-align: center; 
+}
+
+/* Encabezado */
+header {
+    padding: 60px 0 30px 0;
+    border-bottom: 3px solid #C36A5A; 
+}
+
+h1 {
+    color: #C36A5A; 
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* Contenedor Principal */
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative; /* Asegura que el contenido esté por encima de las hojas */
+    z-index: 10;
+}
+
+/* Estilo para las secciones de contenido (incluyendo la carta) */
+section {
+    padding: 25px;
+    background-color: #FFFAF0; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: left; 
+}
+
+h2 {
+    color: #4A3A29; 
+    border-left: 5px solid #A9A48C; 
+    padding-left: 10px;
+    margin-top: 0;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Imágenes y media */
+.media img {
+    display: block;
+    max-width: 40%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    border: 3px solid #C36A5A; 
+}
+
+/* Pie de página */
+footer {
+    padding: 20px 0 40px 0;
+    font-style: italic;
+    color: #A9A48C; 
+    border-top: 1px dashed #A9A48C;
+}
+
+/* ======================================= */
+/* 🍃 Estilo y Animación de Hojas Flotantes */
+/* Recuerda añadir el código HTML en el <body> */
+/* ======================================= */
+
+.hojas i {
+    position: absolute;
+    display: block;
+    width: 20px; 
+    height: 20px;
+    background: #A9A48C; /* Color Verde Oliva Suave de tu paleta */
+    border-radius: 50%;
+    opacity: 0.7; 
+    animation: animate 15s linear infinite; 
+    z-index: -1; 
+}
+
+/* Propiedades individuales para cada hoja (para aleatoriedad) */
+.hojas i:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    left: 20%;
+    animation-delay: 2s;
+    animation-duration: 10s;
+}
+
+.hojas i:nth-child(3) {
+    left: 45%;
+    animation-delay: 4s;
+    animation-duration: 12s;
+}
+
+.hojas i:nth-child(4) {
+    width: 25px;
+    height: 25px;
+    left: 60%;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.hojas i:nth-child(5) {
+    left: 80%;
+    animation-delay: 5s;
+    animation-duration: 14s;
+}
+
+.hojas i:nth-child(6) {
+    left: 10%;
+    animation-delay: 1s;
+    animation-duration: 20s;
+    width: 18px;
+    height: 18px;
+}
+
+.hojas i:nth-child(7) {
+    left: 90%;
+    animation-delay: 3s;
+    animation-duration: 16s;
+    width: 22px;
+    height: 22px;
+}
+
+.hojas i:nth-child(8) {
+    left: 35%;
+    animation-delay: 6s;
+    animation-duration: 13s;
+}
+
+.hojas i:nth-child(9) {
+    left: 70%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+    width: 16px;
+    height: 16px;
+}
+
+.hojas i:nth-child(10) {
+    left: 5%;
+    animation-delay: 10s;
+    animation-duration: 11s;
+}
+
+
+/* La animación real (el movimiento de caída) */
+@keyframes animate {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg); 
+        opacity: 0;
+    }
+}
+
+.collage-img {
+    position: absolute;
+    width: 150px; /* Tamaño reducido para 8 fotos */
+    height: auto;
+    max-width: 90%; 
+    border: 8px solid white; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+    transition: all 0.5s ease; 
+}
+.collage-fotos-contenedor {
+    /* ... otras reglas ... */
+    position: relative; 
+    height: 600px; /* Aumentamos la altura para acomodar 8 fotos */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+}
+/* Posiciones y rotaciones para las 8 fotos */
+
+.collage-fotos-contenedor img:nth-child(1) {
+    transform: rotate(-12deg); 
+    top: 50px; 
+    left: 5%; 
+    z-index: 8; /* Capa más alta */
+}
+
+.collage-fotos-contenedor img:nth-child(2) {
+    transform: rotate(5deg);
+    top: 80px; 
+    left: 25%; 
+    z-index: 7;
+}
+
+.collage-fotos-contenedor img:nth-child(3) {
+    transform: rotate(-3deg);
+    top: 30px; 
+    left: 45%;
+    z-index: 6;
+}
+
+.collage-fotos-contenedor img:nth-child(4) {
+    transform: rotate(10deg);
+    top: 150px;
+    right: 5%;
+    z-index: 5;
+}
+
+.collage-fotos-contenedor img:nth-child(5) {
+    transform: rotate(-8deg);
+    bottom: 100px;
+    left: 10%;
+    z-index: 4;
+}
+
+.collage-fotos-contenedor img:nth-child(6) {
+    transform: rotate(15deg);
+    bottom: 50px;
+    left: 35%;
+    z-index: 3;
+}
+
+.collage-fotos-contenedor img:nth-child(7) {
+    transform: rotate(-18deg);
+    bottom: 150px;
+    right: 30%;
+    z-index: 2;
+}
+
+.collage-fotos-contenedor img:nth-child(8) {
+    transform: rotate(7deg);
+    bottom: 10px;
+    right: 5%;
+    z-index: 1; /* Capa más baja */
+}
